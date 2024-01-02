@@ -1,0 +1,17 @@
+table{
+    border: 3px solid  black;
+    width: 50%; 
+    margin: 10% auto;
+  border-collapse: collapse;
+}
+
+.col{
+        height: 5px;
+    width: 5px;
+    border: solid black 3px;
+}
+.row{
+     height: 50px;
+    width: 5px;
+      
+} 
