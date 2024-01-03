@@ -1,0 +1,33 @@
+body { 
+      width: 100%; 
+    }
+
+    .news-container {
+      width:auto;;
+      margin-top: 10%;
+      background-color: #130689;
+      border: 8px solid goldenrod;
+      border-radius:20px;
+      color: #fff;
+      padding: 10px;
+      white-space: nowrap;
+      
+    }
+    h1{
+      animation: scrollText 15s linear infinite;
+    }
+
+    @keyframes scrollText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-130%); }
+    
+    } 
+
+    span{
+      margin-left: 35%;
+      font-family: 'Times New Roman';
+      color: rgb(9, 37, 128);
+      font-size: 80px;
+      font-weight:1000
+      ;
+    }

@@ -1,0 +1,40 @@
+
+.container {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 20px;
+  border: 2px solid #8c80f6;
+  border-radius: 10px; 
+  background-color: #aca6f37d;
+}
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+   
+input {
+  padding: 10px;  
+}
+
+button {
+  background-color: #8c80f6;
+  color: white;
+  padding: 10px; 
+  border: 2px solid  rgb(255, 255, 255);
+  border-radius: 5px;
+  cursor: pointer;
+}
+ 
+@media (max-width: 600px) {
+  .container {
+    margin: 30px;
+    background-color:rgba(64, 224, 253, 0.377);
+    border: 2px solid rgb(18, 213, 247);
+ 
+
+  }
+  button{
+    background-color: rgb(18, 213, 247);
+  }
+}
