@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        
-        var str = prompt("Enter a string: ");
-        var outstr=""
-        for(var i=0;i<str.length;i++){
-            var ascii=str[i].charCodeAt(0)
-            if(ascii%2==0){ 
-                outstr+=str[i].toUpperCase()
-            }
-            if(ascii%2!=0){
-                outstr+=str[i].toLowerCase()
-            }
+      var str = prompt("Enter a string: ");
+      var outstr = "";
+      for (var i = 0; i < str.length; i++) {
+        var ascii = str[i].charCodeAt(0);
+        if (ascii % 2 == 0) {
+          outstr += str[i].toUpperCase();
         }
-        document.write(outstr)
+        if (ascii % 2 != 0) {
+          outstr += str[i].toLowerCase();
+        }
+      }
+      document.write(outstr);
     </script>
-</body>
+  </body>
 </html>

@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        
       var str = prompt("Enter a string to check number of vowels: ");
-      var count=0
-        for(let i=0;i<str.length;i++){
-            if(str[i] == "a" || str[i]=="A"||str[i] == "e" || str[i]=="E"||str[i] == "i" || str[i]=="I"||str[i] == "o" || str[i]=="O"||str[i] == "u" || str[i]=="U")
-            {
-                count++
-            }
+      var count = 0;
+      for (let i = 0; i < str.length; i++) {
+        if (
+          str[i] == "a" ||
+          str[i] == "A" ||
+          str[i] == "e" ||
+          str[i] == "E" ||
+          str[i] == "i" ||
+          str[i] == "I" ||
+          str[i] == "o" ||
+          str[i] == "O" ||
+          str[i] == "u" ||
+          str[i] == "U"
+        ) {
+          count++;
         }
-        document.write("There is ",count," vowels in string.")
+      }
+      document.write("There is ", count, " vowels in string.");
     </script>
-</body>
+  </body>
 </html>
