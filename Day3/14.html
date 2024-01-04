@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var number =prompt("Enter a number: ");
+        var fnum=number.split(" ").map(Number)
+        var highest=Math.max(...fnum)
+        var lowest=Math.min(...fnum)
+        document.write("highest number is ",highest)
+        document.write("<br> lowest number is ",lowest)
+    </script>
+</body>
+</html>

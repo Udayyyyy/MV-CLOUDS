@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var number = prompt("Enter Integer: ");
+      var inumber = parseInt(number);
+
+      console.log(lengthofnumber(number));
+      document.write(lengthofnumber(number));
+      
+      function lengthofnumber(inumber) {
+        if (isNaN(inumber)) return "The input is not a valid integer.";
+        else return inumber.toString().length;
+      }
+    </script>
+  </body>
+</html>

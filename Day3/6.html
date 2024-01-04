@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+      var number = parseInt(prompt("Enter a numebr: "));
+      var shiftamount = parseInt(prompt("Enter a shiftamount : "));
+      document.write("Right shifted number: ",rightshift(number,shiftamount))
+      
+      function rightshift(number,shiftamount){
+        return (Math.floor(number/Math.pow(2,shiftamount)));   
+      }
+    </script>
+</body>
+</html>

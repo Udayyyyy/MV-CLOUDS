@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort String by ASCII Value</title>
+</head>
+<body>
+    <script>
+        var inputString =  prompt("Enter a string: "); 
+        
+        function sortStringByASCII(inputString) {
+            var sortedString = inputString.split('').sort(function (a, b) {
+                return a.charCodeAt(0) - b.charCodeAt(0);
+            }).join('');
+
+            return sortedString;
+        }
+
+        document.write("Original String: ", inputString, "<br>");
+        document.write("Sorted String: ", sortStringByASCII(inputString));
+    </script>
+</body>
+</html>
+

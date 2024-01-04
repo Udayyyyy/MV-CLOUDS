@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var number = parseInt(prompt("Enter a two digit number: "));
+      snumber = number.toString();
+      if (snumber.length > 2) {
+        document.write("Please enter valid number");
+      } else {
+        var rnumber = parseInt(snumber.split("").reverse().join(""));
+        if (rnumber > number) {
+          document.write("True, The swaped number is " + rnumber);
+        } else {
+          document.write("False");
+        }
+      }
+    </script>
+  </body>
+</html>
