@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lunch Time Countdown</title>
+  </head>
+  <body>
+    <input type="time" id="timee" />
+    <button onclick="sendTime()">Get remaining time</button><br />
+
+    <script>
+      function sendTime() {
+        var currentTime = new Date();
+        var lunchTime = new Date(
+          `1970-01-01T${document.getElementById("timee").value}`
+        );
+
+        if (lunchTime <= currentTime) {
+          lunchTime.setDate(lunchTime.getDate() + 1);
+        }
+
+        var diffh = lunchTime.getHours() - currentTime.getHours();
+        var diffm = lunchTime.getMinutes() - currentTime.getMinutes();
+
+        document.write(
+          "Current Time: ",
+          currentTime.toLocaleTimeString(),
+          "<br>"
+        );
+        document.write("Lunch Time: ", lunchTime.toLocaleTimeString(), "<br>");
+        document.write(
+          "Time Remaining: ",
+          diffh,
+          " hours and ",
+          diffm,
+          " minutes"
+        );
+      }
+    </script>
+  </body>
+</html>

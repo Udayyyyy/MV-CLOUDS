@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var number = prompt("Enter a number: ");
+      var numberArray = number.split('').map(Number);
+      document.write(numberArray[0]);
+      for (var a = 0; a < numberArray.length-1; a++) {
+        
+        if (numberArray[a] === numberArray[a + 1] - 1) {
+          document.write(numberArray[a + 1]);
+        } else {
+          document.write(" ", numberArray[a + 1]);
+        }
+      }
+    </script>
+  </body>
+</html>
