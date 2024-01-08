@@ -1,8 +1,6 @@
 const fs = require("fs");
 
-const filePath = "6.txt";
-
-fs.readFile(filePath, "utf-8", (err, data) => {
+fs.readFile("6.txt", "utf-8", (err, data) => {
   if (err) {
     console.error("Error reading file:", err);
     return;
@@ -10,7 +8,7 @@ fs.readFile(filePath, "utf-8", (err, data) => {
 
   var words = data.split(/\s+/);
   console.log(words)
-  const charIndices = {};
+  let charIndices = {};
 
   for (let j = 0; j < words.length; j++) {
     let word = words[j];
@@ -18,11 +16,14 @@ fs.readFile(filePath, "utf-8", (err, data) => {
       const char = word[i];
 
       if (charIndices.hasOwnProperty(char)) {
-        console.log([char], ":", [charIndices[char]-1, i]);
+        console.log([char], ":", [charIndices[char], i]);
+        charIndices = {};
         break
-      } else { 
-        charIndices[char] = i + 1; 
+      }  
+    else { 
+        charIndices[char] = i; 
       }
     }
+   charIndices = {};
   }
 });

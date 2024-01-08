@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <input type="file" id="fileInput" />
+    <button onclick="processFile()">Process File</button>
+
+    <script>
+      function processFile() {
+        const fileInput = document.getElementById("fileInput");
+        const file = fileInput.files[0];
+
+        if (file) {
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            const fileContent = e.target.result;
+            findRecurringCharacters(fileContent);
+          };
+          reader.readAsText(file);
+        } else {
+          console.error("Please select a file.");
+        }
+      }
+
+      function findRecurringCharacters(data) {
+        var words = data.split(/\s+/);
+        console.log(words);
+        document.write(words, "<br><br>");
+
+        let charIndices = {};
+
+        for (let j = 0; j < words.length; j++) {
+          let word = words[j];
+          for (let i = 0; i < word.length; i++) {
+            const char = word[i];
+
+            if (charIndices.hasOwnProperty(char)) {
+              console.log([char], ":", [charIndices[char], i]);
+              document.write([char], ":", [charIndices[char], i, "<br><br>"]);
+              charIndices = {};
+              break;
+            } else {
+              charIndices[char] = i;
+            }
+          }
+          charIndices = {};
+        }
+      }
+    </script>
+  </body>
+</html>
