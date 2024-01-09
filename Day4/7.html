@@ -1,102 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Gallery with Download Buttons</title>
-  <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> </title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
 
-    th, td {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
+      th,
+      td {
+        border: 1px solid #000000;
+        text-align: left;
+        padding: 8px;
+      }
 
-    img {
-      max-width: 100px;
-      max-height: 100px;
-    }
+      img {
+        max-width: 100px;
+        max-height: 100px;
+      }
 
-    .download-btn {
-      padding: 5px;
-      text-align: center;
-      display: block;
-      width: 80px;
-      margin: auto;
-      cursor: pointer;
-      color: white;
-      background-color: #007bff;
-      text-decoration: none;
-      border-radius: 5px;
-    }
+      .download-btn {
+        padding: 5px;
+        text-align: center;
+        display: block;
+        width: 80px;
+        margin: auto;
+        cursor: pointer;
+        color: white;
+        background-color: #007bff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
 
-    .download-btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
-</head>
-<body>
+      .download-btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="file" id="fileInput" accept=".csv" />
+    <button onclick="handleFile()">Read CSV</button>
 
-<table id="imageTable">
-  <thead>
-    <tr>
-      <th>Image Preview</th>
-      <th>Download</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+    <table id="imageTable">
+      <thead>
+        <tr>
+          <th>Image Preview</th>
+          <th>Download</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
-<script>
-  // Provide CSV data as a variable
-  const csvData = `ImageURL
-C:\\Users\\91973\\Desktop\\MV CLOUDS\\Day4\\7pic1.jpg
-C:\\Users\\91973\\Desktop\\MV CLOUDS\\Day4\\7pic2.jpg
-C:\\Users\\91973\\Desktop\\MV CLOUDS\\Day4\\7pic3.jpg
-C:\\Users\\91973\\Desktop\\MV CLOUDS\\Day4\\7pic4.jpg`;
+    <script>
+      function handleFile() {
+        const fileInput = document.getElementById("fileInput");
+        const file = fileInput.files[0];
 
-  const imageData = parseCsvData(csvData);
+        if (file) {
+          const reader = new FileReader();
 
-  // Function to parse CSV data
-  function parseCsvData(data) {
-    const rows = data.trim().split('\n').slice(1); // Remove the header and split into rows
-    return rows.map(row => {
-      const [ImageURL] = row.split(',');
-      return { ImageURL: ImageURL.trim() };
-    });
-  }
+          reader.onload = function (e) {
+            const fileContent = e.target.result;
+            const imageData = parseCsvData(fileContent);
+            createImageTable(imageData);
+          };
 
-  // Function to create image table
-  function createImageTable(data) {
-    const tableBody = document.querySelector('#imageTable tbody');
+          reader.readAsText(file);
+        } else {
+          console.error("Please select a file.");
+          alert("Please select a file.")
+        }
+      }
 
-    data.forEach(item => {
-      const row = tableBody.insertRow();
-      const cellImagePreview = row.insertCell(0);
-      const cellDownload = row.insertCell(1);
+      function parseCsvData(data) {
+        const rows = data.trim().split("\n").slice(1);
+        return rows.map((row) => {
+          const [ImageURL] = row.split(",");
+          return { ImageURL: ImageURL.trim() };
+        });
+      }
 
-      const imageElement = document.createElement('img');
-      imageElement.src = item.ImageURL;
-      imageElement.alt = 'Image Preview';
+      function createImageTable(data) {
+        const tableBody = document.querySelector("#imageTable tbody");
+        tableBody.innerHTML = "";
 
-      const downloadButton = document.createElement('a');
-      downloadButton.href = item.ImageURL;
-      downloadButton.download = `image_${data.indexOf(item) + 1}.jpg`;
-      downloadButton.textContent = 'Download'; 
-      downloadButton.classList.add('download-btn');
+        data.forEach((item) => {
+          const row = tableBody.insertRow();
+          const cellImagePreview = row.insertCell(0);
+          const cellDownload = row.insertCell(1);
 
-      cellImagePreview.appendChild(imageElement);
-      cellDownload.appendChild(downloadButton);
-    });
-  }
+          const imageElement = document.createElement("img");
+          imageElement.src = item.ImageURL;
+          imageElement.alt = "Image Preview";
 
-  createImageTable(imageData);
-</script>
+          const downloadButton = document.createElement("a");
+          downloadButton.href = item.ImageURL;
+          downloadButton.download = "image.jpg";
+          downloadButton.textContent = "Download";
+          downloadButton.classList.add("download-btn");
 
-</body>
+          cellImagePreview.appendChild(imageElement);
+          cellDownload.appendChild(downloadButton);
+        });
+      }
+    </script>
+  </body>
 </html>
