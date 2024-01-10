@@ -10,6 +10,22 @@ public class thirteen {
  
         sb.setLength(0);
         System.out.println(sb);
+
+
+        
+        sb.append("No plans Right now");
+        System.out.println(sb);
+ 
+        sb.delete(0,sb.length());
+        System.out.println(sb);
+        
+
+
+        sb.append("Ohh, Sad emoji");
+        System.out.println(sb);
+
+        sb=new StringBuilder();
+        System.out.println(sb);
 }
     
 }

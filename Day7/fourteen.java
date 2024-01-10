@@ -3,7 +3,7 @@ package Day7;
 public class fourteen {
     public static void main(String[] args) {
         int key=6;
-        String str="Hey, I want to encrypt this msg";
+        String str="ABC";
         StringBuilder dstr=new StringBuilder();
         StringBuilder estr=new StringBuilder();        
         System.out.println("Original Message : "+str);
@@ -11,7 +11,9 @@ public class fourteen {
         char [] chars=str.toCharArray();
 
         for(char c:chars){
-            c+=key;
+            if(c%2==0){c+=2*key;}
+            else{c-=3*key;}
+            
         dstr.append(c); 
 
         }
@@ -23,7 +25,9 @@ public class fourteen {
          char [] dchars=dsstr.toCharArray();
 
           for(char c:dchars){
-            c-=key;
+            if(c%2==0){c-=2*key;}
+            else{c+=3*key;}
+             
  
         estr.append(c);
 
