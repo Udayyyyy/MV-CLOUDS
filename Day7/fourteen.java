@@ -3,7 +3,7 @@ package Day7;
 public class fourteen {
     public static void main(String[] args) {
         int key=6;
-        String str="ABC";
+        String str="my name";
         StringBuilder dstr=new StringBuilder();
         StringBuilder estr=new StringBuilder();        
         System.out.println("Original Message : "+str);
