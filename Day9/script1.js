@@ -2,11 +2,6 @@ var reducer=1;
 var n=0
 var flag=false
 var align = 0;
-onDragStart = function (ev) {
-     
-    
-
-};
 
  
 drop_handler = function (ev) {
@@ -49,13 +44,9 @@ drop_handler = function (ev) {
     )},${Math.floor(Math.random() * 256)})`;
     newDiv.setAttribute("style", `background-color:${randomcolor};`);
     
-    newDiv.setAttribute("draggable", "true");
-    newDiv.setAttribute("ondragstart", "onDragStart(event)");
+    newDiv.setAttribute("draggable", "true"); 
     container.appendChild(newDiv);
      
-    
-
-
 };
 
 
