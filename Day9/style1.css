@@ -1,5 +1,10 @@
 .maincontainer{
-    border: 2px solid ;
+    /* border: 10px solid ; */
+    height: 500px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -9,13 +14,6 @@
     height: 200px;
     border-radius: 50%;
     background-color: red;
-    margin-top: 10%;
-    margin-left: 20%;
-    float: left;
-    cursor: pointer;
-    position: absolute;
-  left: 0;
-  right: 0;
 
 }
 [draggable=true] {
@@ -28,8 +26,8 @@
     height: 200px;
     border-radius: 50%;
     background-color: blue;
-    margin-top: 10%;
-    margin-right: 20%;
-    float: right;
-    cursor: pointer; 
+    cursor: pointer;  
+    position:absolute;
+    left: 10px;
+    top: 10px;
 } 

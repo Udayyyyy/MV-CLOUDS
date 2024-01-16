@@ -1,6 +1,7 @@
 var reducer=1;
 var n=0
 var flag=false
+var align = 0;
 onDragStart = function (ev) {
      
     
@@ -16,10 +17,28 @@ drop_handler = function (ev) {
   var container = document.getElementsByClassName("container")[0];
   var currentheight=200;
   var currentwidth=200;
+  
     ev.target.appendChild(innerElement); 
-    innerElement.style.height =(currentheight-(30*reducer))+"px";
-    innerElement.style.width = (currentwidth - (30*reducer))+ "px"; 
-    reducer+=1;  
+    if (currentheight - 20 * reducer==20) {
+      innerElement.style.height = 20+ "px";
+      innerElement.style.width = 20+ "px";
+      console.log(innerElement.style.width);
+      if(align==0){
+         innerElement.style.left="10px"
+        innerElement.style.top = "10px";
+        align+=1 
+      }
+      else{ 
+         innerElement.style.left = "0px";
+         innerElement.style.top = "0px";
+
+      }
+    } 
+    else{
+    innerElement.style.height =(currentheight-(20*reducer))+"px";
+    console.log(currentheight - 20 * reducer);
+    innerElement.style.width = (currentwidth - (20*reducer))+ "px"; 
+    reducer+=1;}  
     var container = document.getElementsByClassName("container")[0];
 
     var newDiv = document.createElement("div");
