@@ -1,0 +1,20 @@
+<apex:page standardController="registration__c">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:outputText value="Name:"/> 
+    <apex:inputField value="{!registration__c.name__c}"/>
+        <br/>
+        <apex:outputText value="Email:"/> 
+    <apex:inputField value="{!registration__c.Email__c}"/>
+        <br/>
+        <apex:outputText value="Phone:"/> 
+        <br/>
+    <apex:inputField value="{!registration__c.Phone__c}"/>
+        <br/>
+        <apex:outputText value="Password:"/> 
+    <apex:inputField value="{!registration__c.Pass__c}"/>
+        <br/>
+        <apex:commandButton action="{!save}" value="Register"/>
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

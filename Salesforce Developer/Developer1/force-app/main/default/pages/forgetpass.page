@@ -1,0 +1,12 @@
+<apex:page standardController="forget__c">   
+<apex:form >
+    <apex:pageBlock title="FORGET PASSWORD">
+    <apex:outputText value="New Password:" />
+    <apex:inputField value="{!forget__c.New_password__c}"  required="true"/> 
+    <br/>
+    <apex:outputText value="Confirm Password:" />
+    <apex:inputField value="{!forget__c.Confirm_password__c}"  required="true"/>  
+    <apex:commandButton action="{!save}" value="Change Password" />
+</apex:pageBlock> 
+</apex:form>
+</apex:page>

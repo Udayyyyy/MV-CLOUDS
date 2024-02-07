@@ -1,0 +1,12 @@
+<apex:page standardController="login__c">   
+<apex:form >
+    <apex:pageBlock title="LOGIN PAGE">
+    <apex:outputText value="Username(email):" />
+    <apex:inputField value="{!login__c.username__c}"  required="true"/> 
+    <br/>
+    <apex:outputText value="Password:" />
+    <apex:inputField value="{!login__c.Password__c}"  required="true"/>  
+    <apex:commandButton action="{!save}" value="Login" />
+</apex:pageBlock> 
+</apex:form>
+</apex:page>
